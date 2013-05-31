@@ -1,12 +1,12 @@
 %define		pkgname	BNFC-meta
 Summary:	Deriving Quasi-Quoters from BNF Grammars
 Name:		ghc-%{pkgname}
-Version:	0.2.2
+Version:	0.4.0.1
 Release:	1
 License:	GPL v2
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	615eea275870ed83043384e5e66f535c
+# Source0-md5:	ee846f41ec50b70f4dc545861914e135
 URL:		http://hackage.haskell.org/package/BNFC-meta/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-alex-meta
@@ -68,8 +68,9 @@ install -d $RPM_BUILD_ROOT%{_libdir}/%{ghcdir}/package.conf.d
 runhaskell Setup.lhs copy --destdir=$RPM_BUILD_ROOT
 
 # work around automatic haddock docs installation
-rm -rf %{name}-%{version}-doc
+%{__rm} -rf %{name}-%{version}-doc
 cp -a $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} %{name}-%{version}-doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 runhaskell Setup.lhs register \
 	--gen-pkg-config=$RPM_BUILD_ROOT/%{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
