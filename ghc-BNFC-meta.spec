@@ -2,7 +2,7 @@
 Summary:	Deriving Quasi-Quoters from BNF Grammars
 Name:		ghc-%{pkgname}
 Version:	0.4.0.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
