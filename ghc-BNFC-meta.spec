@@ -16,7 +16,7 @@ BuildRequires:	ghc-happy-meta-prof
 BuildRequires:	ghc-haskell-src-meta
 BuildRequires:	ghc-haskell-src-meta-prof
 BuildRequires:	rpmbuild(macros) >= 1.608
-%requires_releq	ghc
+%requires_eq	ghc
 Requires:	ghc-alex-meta
 Requires:	ghc-happy-meta
 Requires:	ghc-haskell-src-meta
